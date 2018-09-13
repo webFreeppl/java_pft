@@ -28,7 +28,7 @@ public class GroupCreationTests {
     driver.findElement(By.name("user")).sendKeys("admin");
     driver.findElement(By.name("pass")).clear();
     driver.findElement(By.name("pass")).sendKeys("secret");
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Password:'])[1]/following::input[2]")).click();
+    driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();
     driver.findElement(By.linkText("groups")).click();
     driver.findElement(By.name("new")).click();
     driver.findElement(By.name("group_name")).click();
