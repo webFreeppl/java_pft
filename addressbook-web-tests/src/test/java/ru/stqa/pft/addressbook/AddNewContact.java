@@ -2,6 +2,8 @@ package ru.stqa.pft.addressbook;
 
 //import java.util.regex.Pattern; не используеться
 import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.*;
 import static org.testng.Assert.*;
 import org.openqa.selenium.*;
@@ -71,9 +73,9 @@ public class AddNewContact {
     wd.findElement(By.name("homepage")).click();
     wd.findElement(By.name("homepage")).clear();
     wd.findElement(By.name("homepage")).sendKeys("CountryPaga");
-    wd.findElement(By.name("bday")).click();
-    wd.findElement(By.name("bday")).click();
-    new Select(wd.findElement(By.name("bday"))).selectByVisibleText("1");
+//    wd.findElement(By.name("bday")).click();
+//    wd.findElement(By.name("bday")).click();
+//    new Select(wd.findElement(By.name("bday"))).selectByVisibleText("1");
     new Select(wd.findElement(By.name("bday"))).selectByVisibleText("16");
     wd.findElement(By.name("bmonth")).click();
     new Select(wd.findElement(By.name("bmonth"))).selectByVisibleText("June");
@@ -83,7 +85,7 @@ public class AddNewContact {
     wd.findElement(By.name("byear")).sendKeys("1985");
     wd.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Birthday:'])[1]/following::label[1]")).click();
     wd.findElement(By.name("aday")).click();
-    new Select(wd.findElement(By.name("aday"))).selectByVisibleText("20");
+    new Select(wd.findElement(By.name("aday"))).selectByVisibleText("22");
     wd.findElement(By.name("amonth")).click();
     new Select(wd.findElement(By.name("amonth"))).selectByVisibleText("March");
     wd.findElement(By.name("amonth")).click();
@@ -103,13 +105,13 @@ public class AddNewContact {
     wd.findElement(By.name("notes")).clear();
     wd.findElement(By.name("notes")).sendKeys("DiscriptionNotes");
     wd.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Notes:'])[1]/following::input[1]")).click();
-    wd.findElement(By.linkText("home")).click();
-    wd.findElement(By.linkText("Logout")).click();
+//    wd.findElement(By.linkText("home")).click();
+//    wd.findElement(By.linkText("Logout")).click();
   }
 
   @AfterMethod(alwaysRun = true)
   public void tearDown() throws Exception {
-    wd.quit();
+//    wd.quit();
     String verificationErrorString = verificationErrors.toString();
     if (!"".equals(verificationErrorString)) {
       fail(verificationErrorString);
