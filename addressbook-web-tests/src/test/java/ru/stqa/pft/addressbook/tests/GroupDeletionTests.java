@@ -2,11 +2,16 @@ package ru.stqa.pft.addressbook.tests;
 
 import org.testng.annotations.Test;
 
-public class GroupDeletionTests extends TestBase {
+public class GroupDeletionTests {
+
+  private final TestBase testBase = new TestBase();
 
   @Test
   public void testGroupDeletion() throws Exception {
-    app.deletGroupForm();
+    testBase.app.deletGroupForm();
   }
 
+  public TestBase getTestBase() {
+    return testBase;
+  }
 }
